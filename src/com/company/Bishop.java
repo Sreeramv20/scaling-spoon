@@ -5,7 +5,7 @@ public class Bishop extends ChessPiece{
         setPositioni(b);
         setPositionj(a);
     }
-    public boolean move(int a, int b, int c, int d) throws OutOfBoardException {
+    public boolean move(ChessBoard n, int a, int b, int c, int d) throws OutOfBoardException {
         if(c>=8||d>=8){
             tof=false;
             throw new OutOfBoardException("Invalid Board Position. ("+a+","+b+")"+" ("+c+","+d+")"+"\n=======================================");
@@ -17,5 +17,13 @@ public class Bishop extends ChessPiece{
             tof=false;
         }
         return tof;
+    }
+    public String getPieceName() {
+        return "bishop";
+    }
+
+    @Override
+    public String getSymbol() {
+        return "-b- ";
     }
 }

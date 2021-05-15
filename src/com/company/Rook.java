@@ -5,7 +5,7 @@ public class Rook extends ChessPiece{
         setPositioni(b);
         setPositionj(a);
     }
-    public boolean move(int a, int b, int c, int d) throws OutOfBoardException {
+    public boolean move(ChessBoard n, int a, int b, int c, int d) throws OutOfBoardException {
        if(d>=8||c>=8){
            tof=false;
            throw new OutOfBoardException("Invalid Board Position. ("+a+","+b+")"+" ("+c+","+d+")"+"\n=======================================");
@@ -17,5 +17,11 @@ public class Rook extends ChessPiece{
             tof=false;
         }
         return tof;
+    }
+    public String getPieceName() {
+        return "rook";
+    }
+    public String getSymbol() {
+        return "-r- ";
     }
 }
